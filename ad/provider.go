@@ -122,6 +122,7 @@ func Provider() *schema.Provider {
 			"ad_user":             resourceADUser(),
 			"ad_group":            resourceADGroup(),
 			"ad_group_membership": resourceADGroupMembership(),
+			"ad_group_member":     resourceADGroupMember(),
 			"ad_gpo":              resourceADGPO(),
 			"ad_gpo_security":     resourceADGPOSecurity(),
 			"ad_computer":         resourceADComputer(),
@@ -146,3 +147,6 @@ func suppressCaseDiff(k, old, new string, d *schema.ResourceData) bool {
 	// signature in order to match the one defined for DiffSuppressFunc
 	return strings.EqualFold(old, new)
 }
+
+// Define a delimiter for group states
+const groupStateDelimiter = "/"

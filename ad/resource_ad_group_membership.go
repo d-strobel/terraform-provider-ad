@@ -36,11 +36,19 @@ func resourceADGroupMembership() *schema.Resource {
 				MinItems:    1,
 			},
 		},
+		SchemaVersion: 1,
+		StateUpgraders: []schema.StateUpgrader{
+			{
+				Type:    resourceAdGroupMembershipV0().CoreConfigSchema().ImpliedType(),
+				Upgrade: resourceAdGroupMembershipStateUpgradeV0,
+				Version: 0,
+			},
+		},
 	}
 }
 
 func resourceADGroupMembershipRead(d *schema.ResourceData, meta interface{}) error {
-	toks := strings.Split(d.Id(), "/")
+	toks := strings.Split(d.Id(), groupStateDelimiter)
 
 	gm, err := winrmhelper.NewGroupMembershipFromHost(meta.(*config.ProviderConf), toks[0])
 	if err != nil {
@@ -72,7 +80,7 @@ func resourceADGroupMembershipCreate(d *schema.ResourceData, meta interface{}) e
 		return fmt.Errorf("while generating UUID to use as unique membership ID: %s", err)
 	}
 
-	id := fmt.Sprintf("%s/%s", gm.GroupGUID, membershipUUID)
+	id := fmt.Sprintf("%s%s%s", gm.GroupGUID, groupStateDelimiter, membershipUUID)
 	d.SetId(id)
 
 	return nil
@@ -84,7 +92,7 @@ func resourceADGroupMembershipUpdate(d *schema.ResourceData, meta interface{}) e
 		return err
 	}
 
-	err = gm.Update(meta.(*config.ProviderConf), gm.GroupMembers)
+	err = gm.SetGroupMembers(meta.(*config.ProviderConf), gm.GroupMembers)
 	if err != nil {
 		return err
 	}
