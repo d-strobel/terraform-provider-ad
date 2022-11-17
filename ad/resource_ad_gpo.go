@@ -3,11 +3,11 @@ package ad
 import (
 	"strings"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/winrmhelper"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/winrmhelper"
 )
 
 func resourceADGPO() *schema.Resource {

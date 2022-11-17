@@ -6,10 +6,10 @@ import (
 	"log"
 	"strings"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/gposec"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/gposec"
 	"github.com/packer-community/winrmcp/winrmcp"
 	"gopkg.in/ini.v1"
 )

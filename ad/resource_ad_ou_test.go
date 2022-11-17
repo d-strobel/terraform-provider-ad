@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/winrmhelper"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/winrmhelper"
 )
 
 func TestAccResourceADOU_basic(t *testing.T) {
@@ -63,7 +63,7 @@ variable ad_ou_path {}
 variable ad_ou_description {}
 variable protected { default = %t}
 
-resource "ad_ou" "o" { 
+resource "ad_ou" "o" {
     name = "${var.ad_ou_name}%s"
     path = var.ad_ou_path
     description = var.ad_ou_description

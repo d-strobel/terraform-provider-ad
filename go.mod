@@ -1,4 +1,4 @@
-module github.com/hashicorp/terraform-provider-ad
+module github.com/d-strobel/terraform-provider-ad
 
 go 1.18
 

@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/winrmhelper"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/winrmhelper"
 )
 
 func TestAccResourceADGPLink_basic(t *testing.T) {
@@ -112,15 +112,15 @@ func testAccResourceADGPLinkConfigBadGUID(enforced, enabled bool, order int) str
 		description = var.ad_ou_description
 		protected = var.ad_ou_protected
 	}
-		
-	resource "ad_gplink" "og" { 
+
+	resource "ad_gplink" "og" {
 		gpo_guid = "something-horribly-wrong"
 		target_dn = ad_ou.o.dn
 		enforced = %t
 		enabled = %t
 		order = %d
 	}
-	
+
 	`, enforced, enabled, order)
 }
 
@@ -141,22 +141,22 @@ func testAccResourceADGPLinkConfigBasic(enforced, enabled bool, order int) strin
 		description = var.ad_ou_description
 		protected = var.ad_ou_protected
 	}
-		
+
 	resource "ad_gpo" "g" {
 		name        = var.ad_gpo_name
 		domain      = var.ad_gpo_domain
 		description = var.ad_gpo_description
 		status      = var.ad_gpo_status
 	}
-	
-	resource "ad_gplink" "og" { 
+
+	resource "ad_gplink" "og" {
 		gpo_guid = ad_gpo.g.id
 		target_dn = ad_ou.o.dn
 		enforced = %t
 		enabled = %t
 		order = %d
 	}
-	
+
 	`, enforced, enabled, order)
 }
 

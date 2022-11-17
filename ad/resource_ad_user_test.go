@@ -7,13 +7,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/structure"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/winrmhelper"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/winrmhelper"
 )
 
 func TestAccResourceADUser_basic(t *testing.T) {
@@ -329,8 +329,8 @@ func testAccResourceADUserConfigMoved(usernameSuffix string) string {
 	variable ad_ou_path {}
 	variable ad_ou_description {}
 	variable ad_ou_protected {}
-	
-	resource "ad_ou" "o" { 
+
+	resource "ad_ou" "o" {
 		name = var.ad_ou_name
 		path = var.ad_ou_path
 		description = var.ad_ou_description

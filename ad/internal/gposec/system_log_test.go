@@ -3,8 +3,8 @@ package gposec
 import (
 	"testing"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/adschema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/adschema"
 )
 
 func TestWriteSystemLog(t *testing.T) {

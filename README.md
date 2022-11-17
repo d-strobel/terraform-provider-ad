@@ -3,18 +3,18 @@
     <img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" alt="Terraform logo" align="right" height="50" />
 </a>
 
-![Status: Tech Preview](https://img.shields.io/badge/status-experimental-EAAA32) [![Releases](https://img.shields.io/github/release/hashicorp/terraform-provider-ad.svg)](https://github.com/hashicorp/terraform-provider-ad/releases)
-[![LICENSE](https://img.shields.io/github/license/hashicorp/terraform-provider-ad.svg)](https://github.com/hashicorp/terraform-provider-ad/blob/main/LICENSE)
-![Unit tests](https://github.com/hashicorp/terraform-provider-ad/workflows/Unit%20tests/badge.svg)
+![Status: Tech Preview](https://img.shields.io/badge/status-experimental-EAAA32) [![Releases](https://img.shields.io/github/release/hashicorp/terraform-provider-ad.svg)](https://github.com/d-strobel/terraform-provider-ad/releases)
+[![LICENSE](https://img.shields.io/github/license/hashicorp/terraform-provider-ad.svg)](https://github.com/d-strobel/terraform-provider-ad/blob/main/LICENSE)
+![Unit tests](https://github.com/d-strobel/terraform-provider-ad/workflows/Unit%20tests/badge.svg)
 
 This Windows AD provider for Terraform allows you to manage users, groups and group policies in your AD installation.
 
-This provider is a technical preview, which means it's a community supported project. It still requires extensive testing and polishing to mature into a HashiCorp officially supported project. Please [file issues](https://github.com/hashicorp/terraform-provider-ad/issues/new/choose) generously and detail your experience while using the provider. We welcome your feedback.
+This provider is a technical preview, which means it's a community supported project. It still requires extensive testing and polishing to mature into a HashiCorp officially supported project. Please [file issues](https://github.com/d-strobel/terraform-provider-ad/issues/new/choose) generously and detail your experience while using the provider. We welcome your feedback.
 
 ## Requirements
 
 * [Terraform](https://www.terraform.io/downloads.html) version 0.12.x+
-* [Windows Server](https://www.microsoft.com/en-us/windows-server) 2012R2 or greater 
+* [Windows Server](https://www.microsoft.com/en-us/windows-server) 2012R2 or greater
 * [Go](https://golang.org/doc/install) version 1.16.x+
 
 ## Getting Started
@@ -25,6 +25,6 @@ Once you have the plugin installed, review the [docs](docs/) folder to understan
 
 ## Contributing
 
-We welcome your contribution. Please understand that the experimental nature of this repository means that contributing code may be a bit of a moving target. If you have an idea for an enhancement or bug fix, and want to take on the work yourself, please first [create an issue](https://github.com/hashicorp/terraform-provider-ad/issues/new/choose) so that we can discuss the implementation with you before you proceed with the work.
+We welcome your contribution. Please understand that the experimental nature of this repository means that contributing code may be a bit of a moving target. If you have an idea for an enhancement or bug fix, and want to take on the work yourself, please first [create an issue](https://github.com/d-strobel/terraform-provider-ad/issues/new/choose) so that we can discuss the implementation with you before you proceed with the work.
 
 You can review our [contribution guide](_about/CONTRIBUTING.md) to begin. You can also check out our [frequently asked questions](_about/FAQ.md).

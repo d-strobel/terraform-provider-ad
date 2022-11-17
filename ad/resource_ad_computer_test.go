@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/winrmhelper"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/winrmhelper"
 )
 
 func TestAccResourceADComputer_basic(t *testing.T) {
@@ -133,7 +133,7 @@ variable "ad_computer_sam" {}
 variable "ad_ou_name" {}
 variable "ad_ou_path" {}
 
-resource "ad_ou" "o" { 
+resource "ad_ou" "o" {
 	name = var.ad_ou_name
 	path = var.ad_ou_path
 }

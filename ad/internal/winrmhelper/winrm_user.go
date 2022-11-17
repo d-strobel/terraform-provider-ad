@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/hashicorp/terraform-provider-ad/ad/internal/config"
+	"github.com/d-strobel/terraform-provider-ad/ad/internal/config"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/structure"
 
